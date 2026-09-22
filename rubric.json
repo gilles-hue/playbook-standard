@@ -1,0 +1,410 @@
+{
+  "name": "playbook-standard",
+  "version": "0.9.0",
+  "source": "https://playbook-marketplace.vercel.app/standard",
+  "license": "MIT",
+  "total": 100,
+  "thresholds": {
+    "publish": 70,
+    "featured": 85,
+    "blockingCap": 40
+  },
+  "tiers": [
+    {
+      "min": 85,
+      "verdict": "reference",
+      "label": "Référence",
+      "next": "Publiable et mis en avant dans la marketplace"
+    },
+    {
+      "min": 70,
+      "verdict": "solide",
+      "label": "Solide",
+      "next": "Publiable, avec les correctifs suggérés"
+    },
+    {
+      "min": 50,
+      "verdict": "brouillon",
+      "label": "Brouillon prometteur",
+      "next": "À retravailler avant publication"
+    },
+    {
+      "min": 0,
+      "verdict": "insuffisant",
+      "label": "Pas encore un playbook",
+      "next": "À reprendre en profondeur"
+    }
+  ],
+  "kinds": {
+    "playbook": "Un process qu'on lance pour une mission : il enchaîne des briques, s'arrête pour demander, et se termine sur un livrable.",
+    "agent": "Une tâche qui tourne en continu, de façon automatisée, sans que personne la relance."
+  },
+  "axes": [
+    {
+      "key": "A",
+      "rule": "Un objectif clair",
+      "max": 8,
+      "plain": "On sait en une phrase ce qu'il produit. Exemple : « une campagne Search prête à activer ».",
+      "good": "Une campagne Search prête à activer : mots clés, annonces et budget validés.",
+      "bad": "Améliorer l'acquisition du client.",
+      "criteria": [
+        {
+          "code": "A1",
+          "max": 4,
+          "label": "Objectif en une phrase",
+          "detail": "L'objectif tient en une phrase, unique et falsifiable, qui nomme ce qui est produit à la fin."
+        },
+        {
+          "code": "A2",
+          "max": 4,
+          "label": "Périmètre et interdits",
+          "detail": "Quand l'utiliser, quand ne PAS l'utiliser, et ce que le playbook ne fait jamais."
+        }
+      ]
+    },
+    {
+      "key": "B",
+      "rule": "Des étapes qui s'arrêtent",
+      "max": 11,
+      "plain": "Chaque étape livre quelque chose de concret, et le playbook s'arrête pour demander avant de dépenser ou de publier.",
+      "good": "Les 5 landings sont en ligne. Le playbook s'arrête : GO avant d'engager le budget.",
+      "bad": "On produit tout, puis on lance.",
+      "criteria": [
+        {
+          "code": "B1",
+          "max": 2,
+          "label": "Étapes bornées",
+          "detail": "Étapes numérotées, en nombre fini, ordre justifié."
+        },
+        {
+          "code": "B2",
+          "max": 3,
+          "label": "Un livrable concret par étape",
+          "detail": "Chaque étape produit une chose nommée et constatable, pas une intention."
+        },
+        {
+          "code": "B3",
+          "max": 6,
+          "label": "Arrêt avant dépense ou publication",
+          "detail": "Le playbook s'arrête et demande juste avant chaque moment critique : dépenser, publier, envoyer, écrire sur un compte, agir de façon irréversible."
+        }
+      ]
+    },
+    {
+      "key": "C",
+      "rule": "Des briques identifiées",
+      "max": 9,
+      "plain": "On voit quelles skills et quels agents il enchaîne. Chaque brique fait une seule chose.",
+      "good": "atomic-value-prop → atomic-copywriting → atomic-lp-generation.",
+      "bad": "Le playbook rédige, met en page et publie lui-même.",
+      "criteria": [
+        {
+          "code": "C1",
+          "max": 3,
+          "label": "Skills et agents nommés",
+          "detail": "Les briques enchaînées sont nommées, étape par étape."
+        },
+        {
+          "code": "C2",
+          "max": 4,
+          "label": "Une brique, une chose",
+          "detail": "Chaque brique a un périmètre net. Une skill fourre-tout ou un playbook qui exécute lui-même au lieu d'orchestrer est pénalisé."
+        },
+        {
+          "code": "C3",
+          "max": 2,
+          "label": "Entrées et sorties",
+          "detail": "Ce que chaque brique reçoit et rend est écrit ; l'aval ne refait pas l'amont."
+        }
+      ]
+    },
+    {
+      "key": "D",
+      "rule": "Quelqu'un qui vérifie",
+      "max": 16,
+      "plain": "Un agent relit le travail des autres, et un humain dit GO avant toute action sur le compte du client.",
+      "good": "Un agent relecteur ouvre la page et rend PASS ou FAIL avant publication.",
+      "bad": "Vérifier que tout est bon avant d'envoyer.",
+      "criteria": [
+        {
+          "code": "D1",
+          "max": 6,
+          "label": "Un agent relit le travail",
+          "detail": "Une brique dont le SEUL rôle est de vérifier le travail produit par les autres (relecture, gate, script de contrôle). L'auteur qui coche sa propre liste ne compte pas ; une vérification déclarative vaut au plus 3."
+        },
+        {
+          "code": "D2",
+          "max": 4,
+          "label": "Un humain dit GO",
+          "detail": "Un GO humain explicite avant toute action sur le compte du client, avec un récapitulatif de ce qui part, où, et pour quel coût."
+        },
+        {
+          "code": "D3",
+          "max": 3,
+          "label": "Rapport de fin",
+          "detail": "Produit / dégradé / manquant, jamais de dégradation silencieuse."
+        },
+        {
+          "code": "D4",
+          "max": 3,
+          "label": "Échec au milieu",
+          "detail": "Le playbook dit ce qui se passe si une écriture échoue à mi-parcours : il n'y a pas de retour en arrière automatique sur une API externe. Il s'arrête à la première erreur, ne continue pas « pour voir », et rend l'état exact — ce qui existe sur le compte, ce qui n'existe pas, comment reprendre. Un simple « en cas d'erreur, prévenir » ne compte pas."
+        }
+      ]
+    },
+    {
+      "key": "E",
+      "rule": "Réutilisable",
+      "max": 6,
+      "plain": "Il marche pour n'importe quel client : rien n'est écrit en dur pour un client donné.",
+      "good": "Budget : [budget_jour] € sur [compte_ads], cible [icp].",
+      "bad": "40 € par jour sur le compte Musher.",
+      "criteria": [
+        {
+          "code": "E1",
+          "max": 4,
+          "label": "Paramétré, pas câblé",
+          "detail": "Les valeurs propres à un client (noms, URLs, comptes, budgets) sont des paramètres, jamais des constantes écrites en dur."
+        },
+        {
+          "code": "E2",
+          "max": 2,
+          "label": "Donnée manquante, outil en panne",
+          "detail": "Ce qu'on fait quand une donnée manque ou qu'un outil ne répond pas : signaler, contourner, jamais inventer."
+        }
+      ]
+    },
+    {
+      "key": "F",
+      "rule": "Un rendu que quelqu'un peut voir",
+      "max": 11,
+      "plain": "Il produit quelque part une surface visible — l'onglet du client dans sa Mission App, une page, un dashboard, un document — dit ce qu'on y voit, ce qu'on y valide, et un humain ouvre cette page pour le constater.",
+      "good": "Onglet « Lancement Google Ads » dans la Mission App : campagnes, budgets, annonces à valider.",
+      "bad": "Les livrables sont dans le dossier de mission.",
+      "criteria": [
+        {
+          "code": "F1",
+          "max": 5,
+          "label": "Une surface de rendu nommée",
+          "detail": "Le playbook dit OÙ son travail devient visible — onglet de la Mission App, page hébergée, dashboard, document partagé — et ce qu'on y voit : contenu, chiffres, livrables. Un playbook qui produit sans rien donner à voir est pénalisé."
+        },
+        {
+          "code": "F2",
+          "max": 3,
+          "label": "Ce qu'on y valide",
+          "detail": "Il dit ce qui est soumis à validation sur cette surface, à quel moment, et ce qui se passe en cas de refus."
+        },
+        {
+          "code": "F3",
+          "max": 3,
+          "label": "Le rendu est constaté",
+          "detail": "Avant de proposer quoi que ce soit au client, un humain ouvre la page et confirme ce qu'il voit. Le playbook l'exige explicitement et interdit de conclure depuis un code 200, un compte de blocs ou une relecture de la donnée écrite : ces contrôles passent au vert pendant qu'une page est vide."
+        }
+      ]
+    },
+    {
+      "key": "G",
+      "rule": "Ses outils",
+      "max": 4,
+      "plain": "Il liste ce qu'il utilise, nommément : Google Ads, Meta, HubSpot, les endpoints de Bulldozer OS. « Un outil d'emailing » ne dit rien.",
+      "good": "bdzCreateSeaL2 pour les groupes d'annonces, HubSpot pour les opportunités.",
+      "bad": "Un outil de campagnes et un CRM.",
+      "criteria": [
+        {
+          "code": "G1",
+          "max": 4,
+          "label": "Outils nommés",
+          "detail": "Les outils sont nommés précisément — régies (Google Ads, Meta, LinkedIn), CRM (HubSpot), tools MCP de Bulldozer OS, APIs — avec leur usage. « Un outil d'emailing » ne compte pas."
+        }
+      ]
+    },
+    {
+      "key": "H",
+      "rule": "Deux agents : celui qui conçoit, celui qui exécute",
+      "max": 8,
+      "plain": "Un agent produit la stratégie — campagnes, titres, descriptions, composants. Un autre la pose sur le compte, et seulement après validation du client ou de l'expert.",
+      "good": "strategie-campagnes propose ; execution-campagnes crée en pause, après validation.",
+      "bad": "L'agent crée sur le compte les campagnes qu'il vient d'écrire.",
+      "criteria": [
+        {
+          "code": "H1",
+          "max": 5,
+          "label": "Un agent conçoit, un autre exécute",
+          "detail": "La stratégie (ce qui sera créé : campagnes, groupes, titres, descriptions, composants, audiences) est produite par une brique ; sa mise en œuvre sur le compte (création, import, publication) par une AUTRE brique nommée. Le même agent qui conçoit et pose sur le compte ne compte pas."
+        },
+        {
+          "code": "H2",
+          "max": 3,
+          "label": "L'exécutant attend la validation",
+          "detail": "L'agent d'exécution ne démarre que sur une validation nominative du client ou de l'expert, n'exécute que ce qui a été validé, et crée en pause : l'activation reste un geste humain distinct."
+        }
+      ]
+    },
+    {
+      "key": "I",
+      "rule": "Il raconte chaque étape",
+      "max": 7,
+      "plain": "Quand il tourne, chaque étape se termine par un compte rendu en langage simple — ce qui a été fait, ce qui a été produit, ce qui a coincé — compréhensible par quelqu'un qui ne connaît pas le métier, avant de passer à la suivante.",
+      "good": "Fin d'étape : « 3 landings créées, 1 bloquée — le logo du client manque. »",
+      "bad": "[OK] step_3 done — 4 files written.",
+      "criteria": [
+        {
+          "code": "I1",
+          "max": 4,
+          "label": "Compte rendu simple après chaque étape",
+          "detail": "Le playbook prévoit, à la fin de chaque étape, un compte rendu en langage courant pour quelqu'un qui ne connaît pas le métier : ce qui a été fait, ce qui a été produit, ce qui a posé problème. Un journal technique ou une simple liste de fichiers ne compte pas."
+        },
+        {
+          "code": "I2",
+          "max": 3,
+          "label": "Avant de passer à la suite",
+          "detail": "Ce compte rendu est rendu (à l'utilisateur, à l'expert ou dans l'app du client) AVANT que l'étape suivante ne démarre — il fait partie de la transition, pas d'un bilan final."
+        }
+      ]
+    },
+    {
+      "key": "J",
+      "rule": "Il vérifie de ses propres mains",
+      "max": 6,
+      "plain": "Chaque agent établit son accès et ses données par ses propres appels, au démarrage, avant de conclure quoi que ce soit — jamais sur la foi d'un avertissement, de son coordinateur ou d'un autre agent. Des chiffres qu'il n'a pas obtenus lui-même ne sont pas des chiffres.",
+      "good": "Appelle bdzListSeaL1s toi-même ; si l'accès échoue, dis-le et arrête-toi.",
+      "bad": "Le coordinateur indique que le connecteur fonctionne.",
+      "criteria": [
+        {
+          "code": "J1",
+          "max": 3,
+          "label": "Accès et données établis par ses propres appels",
+          "detail": "Chaque agent commence par vérifier lui-même son accès (un appel réel à l'outil ou à l'endpoint) et obtient lui-même les données sur lesquelles il conclut. Il ne déduit rien d'un avertissement système, d'une consigne du coordinateur ou du test d'un sous-agent."
+        },
+        {
+          "code": "J2",
+          "max": 3,
+          "label": "Jamais de chiffre recopié",
+          "detail": "Le playbook interdit à ses agents de rapporter ou d'utiliser des chiffres fournis par un tiers sans les avoir obtenus eux-mêmes ; en cas d'accès impossible, l'agent le dit et s'arrête au lieu de conclure."
+        }
+      ]
+    },
+    {
+      "key": "K",
+      "rule": "Il compose avec l'existant",
+      "max": 6,
+      "plain": "Quand le compte, le site ou le dispositif du client tourne déjà, il commence par arbitrer ce qu'on garde, ce qu'on corrige et ce qu'on refait — au lieu de repartir d'une page blanche et de racheter un apprentissage déjà payé.",
+      "good": "Campagne Brand : garder. Campagne Générique : refondre, CPA à 3× la cible.",
+      "bad": "On crée la nouvelle structure de compte.",
+      "criteria": [
+        {
+          "code": "K1",
+          "max": 4,
+          "label": "Arbitrage de l'existant",
+          "detail": "Sur un compte, un site ou un dispositif déjà en place, le playbook tranche élément par élément — reprendre tel quel, reprendre en corrigeant, refaire, laisser de côté — en s'appuyant sur des chiffres mesurés, pas sur l'allure. Un playbook qui ne sait que créer de zéro est pénalisé."
+        },
+        {
+          "code": "K2",
+          "max": 2,
+          "label": "Ne pas recréer ce qui existe",
+          "detail": "Il lit l'existant avant de proposer et dit nommément ce que l'exécution ne doit pas recréer. Les écritures n'étant pas idempotentes sur la plupart des régies, un doublon se retire un par un."
+        }
+      ]
+    },
+    {
+      "key": "L",
+      "rule": "Il demande avant de supposer",
+      "max": 8,
+      "plain": "Avant de dérouler, il pose à l'expert les questions qui cadrent le travail — tout l'audit ou seulement le volet sémantique ? ce bloc dans la landing ? des concurrents que le client t'a donnés et qui ne sont pas dans ma liste ? — au lieu de présumer.",
+      "good": "« Audit complet, ou seulement le volet sémantique ? »",
+      "bad": "Dérouler les trois volets sans demander.",
+      "criteria": [
+        {
+          "code": "L1",
+          "max": 5,
+          "label": "Questions de cadrage au démarrage",
+          "detail": "Avant de produire, le playbook pose explicitement à l'expert les questions qui délimitent le travail : périmètre complet ou partiel (tout l'audit SEO ou seulement le sémantique), options à inclure ou non, profondeur attendue. Les questions sont écrites dans le document, avec leurs réponses possibles. Un playbook qui déroule un périmètre présumé est pénalisé."
+        },
+        {
+          "code": "L2",
+          "max": 3,
+          "label": "Il demande ce qu'il ne peut pas savoir",
+          "detail": "Aux moments où l'humain détient une information que le playbook ne peut pas deviner — concurrents nommés par le client, exclusions, contraintes de marque, éléments à ne pas toucher — il s'arrête et la demande, plutôt que de l'ignorer ou de l'inventer."
+        }
+      ]
+    }
+  ],
+  "blocking": [
+    {
+      "code": "R1",
+      "label": "Aucun GO humain avant une action sur le compte du client ou une dépense",
+      "appliesTo": [
+        "playbook",
+        "agent"
+      ]
+    },
+    {
+      "code": "R2",
+      "label": "Personne ne vérifie — ni agent relecteur, ni gate, ni script : tout repose sur la bonne foi",
+      "appliesTo": [
+        "playbook",
+        "agent"
+      ]
+    },
+    {
+      "code": "R3",
+      "label": "Aucun livrable concret : c'est un cours, pas un process exécutable",
+      "appliesTo": [
+        "playbook",
+        "agent"
+      ]
+    },
+    {
+      "code": "R4",
+      "label": "Aucune brique identifiée, ou une seule skill qui fait tout : c'est une méthode, pas un playbook",
+      "appliesTo": [
+        "playbook",
+        "agent"
+      ]
+    },
+    {
+      "code": "R5",
+      "label": "Écrit en dur pour un seul client : non réutilisable",
+      "appliesTo": [
+        "playbook",
+        "agent"
+      ]
+    },
+    {
+      "code": "R6",
+      "label": "Le même agent conçoit la stratégie et l'exécute sur le compte, sans validation entre les deux",
+      "appliesTo": [
+        "playbook",
+        "agent"
+      ]
+    },
+    {
+      "code": "R7",
+      "label": "Un agent conclut ou rapporte des chiffres sur la foi d'un tiers, sans les avoir obtenus par ses propres appels",
+      "appliesTo": [
+        "playbook",
+        "agent"
+      ]
+    },
+    {
+      "code": "R8",
+      "label": "Il agit sur un compte, un site ou un dispositif déjà en place sans jamais arbitrer ce qu'on reprend : il ne sait que créer de zéro, et détruit un apprentissage déjà payé",
+      "appliesTo": [
+        "playbook",
+        "agent"
+      ]
+    },
+    {
+      "code": "R9",
+      "label": "AGENTS UNIQUEMENT — Il ne dit pas ce qui le déclenche ni à quel rythme il tourne : quelqu'un doit le lancer à la main à chaque fois, donc ce n'est pas un agent",
+      "appliesTo": [
+        "agent"
+      ]
+    }
+  ],
+  "rules": [
+    "Un critère sans citation verbatim du document vaut 0.",
+    "Un seul rédhibitoire déclenché plafonne le total à 40.",
+    "Au-dessus de 70, le dépôt est publiable ; au-dessus de 85, il est mis en avant."
+  ]
+}
