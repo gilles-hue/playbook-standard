@@ -13,11 +13,10 @@ curl -fsSL https://playbook-marketplace.vercel.app/standard/install.sh | sh
 Le script écrit trois fichiers dans `~/.claude/skills/playbook-standard/` et ne touche à rien d'autre.
 Vous pouvez le lire avant de l'exécuter : https://playbook-marketplace.vercel.app/standard/install.sh
 
-Ou bien clonez ce dépôt et copiez le dossier :
+Ou clonez le dépôt :
 
 ```bash
-git clone https://github.com/gilles-hue/playbook-standard ~/playbook-standard
-cp -r ~/playbook-standard ~/.claude/skills/playbook-standard
+git clone https://github.com/gilles-hue/playbook-standard ~/.claude/skills/playbook-standard
 ```
 
 ## Utilisation
@@ -45,7 +44,3 @@ Grille v9. Seuil de publication : 70/100.
 Mise en avant : 85. Plafond en cas de rédhibitoire : 40.
 
 Licence MIT — reprenez-la, adaptez-la, gardez-la.
-
----
-
-Ce dépôt est régénéré depuis le site : la grille en ligne fait foi.
