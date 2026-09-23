@@ -1,6 +1,6 @@
 {
   "name": "playbook-standard",
-  "version": "0.9.0",
+  "version": "0.10.0",
   "source": "https://playbook-marketplace.vercel.app/standard",
   "license": "MIT",
   "total": 100,
@@ -176,23 +176,23 @@
     },
     {
       "key": "F",
-      "rule": "Un rendu que quelqu'un peut voir",
+      "rule": "Un rendu que le client peut valider",
       "max": 11,
-      "plain": "Il produit quelque part une surface visible — l'onglet du client dans sa Mission App, une page, un dashboard, un document — dit ce qu'on y voit, ce qu'on y valide, et un humain ouvre cette page pour le constater.",
-      "good": "Onglet « Lancement Google Ads » dans la Mission App : campagnes, budgets, annonces à valider.",
+      "plain": "Il publie ce qu'il produit à un endroit où le client peut le voir et le valider de son côté — une app sur Bulldozer OS, mais tout aussi bien un Notion, un Google Sheet, un document partagé. Peu importe l'endroit : ce qui compte, c'est que la validation soit prévue, et qu'un humain ait constaté le rendu.",
+      "good": "Segmentation publiée dans le Google Sheet du client, onglet « À valider » ; GO attendu avant toute création.",
       "bad": "Les livrables sont dans le dossier de mission.",
       "criteria": [
         {
           "code": "F1",
           "max": 5,
-          "label": "Une surface de rendu nommée",
-          "detail": "Le playbook dit OÙ son travail devient visible — onglet de la Mission App, page hébergée, dashboard, document partagé — et ce qu'on y voit : contenu, chiffres, livrables. Un playbook qui produit sans rien donner à voir est pénalisé."
+          "label": "Un endroit de validation nommé",
+          "detail": "Le playbook dit OÙ il publie son travail pour que le client le valide de son côté — une app sur Bulldozer OS, un Notion, un Google Sheet, un document partagé, un canal — et ce qu'on y trouve : contenu, chiffres, livrables. Tout endroit nommé et consultable compte ; un playbook qui produit sans rien publier nulle part est pénalisé."
         },
         {
           "code": "F2",
           "max": 3,
-          "label": "Ce qu'on y valide",
-          "detail": "Il dit ce qui est soumis à validation sur cette surface, à quel moment, et ce qui se passe en cas de refus."
+          "label": "Ce que le client valide, et quand",
+          "detail": "Il dit ce qui est soumis à la validation du client à cet endroit, à quel moment du process, et ce qui se passe en cas de refus."
         },
         {
           "code": "F3",
@@ -204,17 +204,17 @@
     },
     {
       "key": "G",
-      "rule": "Ses outils",
+      "rule": "Ce dont il a besoin pour tourner",
       "max": 4,
-      "plain": "Il liste ce qu'il utilise, nommément : Google Ads, Meta, HubSpot, les endpoints de Bulldozer OS. « Un outil d'emailing » ne dit rien.",
-      "good": "bdzCreateSeaL2 pour les groupes d'annonces, HubSpot pour les opportunités.",
+      "plain": "Il liste ses prérequis avant de démarrer : les connecteurs (Drive, HubSpot), les comptes et leurs accès (un compte Google Ads rattaché au projet, un MCC), les outils de Bulldozer OS, les clés. « Un outil d'emailing » ne dit rien ; « connecteur Google Drive en lecture » dit tout.",
+      "good": "Prérequis : compte Google Ads rattaché au projet OS, connecteur Google Drive, accès HubSpot en lecture.",
       "bad": "Un outil de campagnes et un CRM.",
       "criteria": [
         {
           "code": "G1",
           "max": 4,
-          "label": "Outils nommés",
-          "detail": "Les outils sont nommés précisément — régies (Google Ads, Meta, LinkedIn), CRM (HubSpot), tools MCP de Bulldozer OS, APIs — avec leur usage. « Un outil d'emailing » ne compte pas."
+          "label": "Prérequis nommés",
+          "detail": "Avant de démarrer, le playbook liste ce dont il a besoin pour tourner : connecteurs (Google Drive, HubSpot, Notion), comptes et niveau d'accès (compte Google Ads rattaché au projet, MCC, propriété GA4), tools MCP de Bulldozer OS, APIs et clés. S'il a besoin d'un Drive, il dit « connecteur Drive ». Une catégorie vague — « un outil d'emailing », « un CRM » — ne compte pas."
         }
       ]
     },

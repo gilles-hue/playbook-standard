@@ -40,7 +40,7 @@ sans rien déposer.
 
 ## Version
 
-Grille v9. Seuil de publication : 70/100.
+Grille v10. Seuil de publication : 70/100.
 Mise en avant : 85. Plafond en cas de rédhibitoire : 40.
 
 Licence MIT — reprenez-la, adaptez-la, gardez-la.

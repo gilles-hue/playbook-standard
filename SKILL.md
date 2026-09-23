@@ -9,7 +9,7 @@ description: >-
 
 # playbook-standard — le standard Bulldozer, hors ligne
 
-Grille v9 · 100 points · 70 pour être publiable · source : https://playbook-marketplace.vercel.app/standard
+Grille v10 · 100 points · 70 pour être publiable · source : https://playbook-marketplace.vercel.app/standard
 
 C'est la grille qui note les dépôts du Playbooks & Agents Lab. Elle sert ici à vous noter
 vous-même, avant de déposer : mêmes axes, mêmes plafonds, mêmes rédhibitoires.
@@ -88,24 +88,24 @@ Il marche pour n'importe quel client : rien n'est écrit en dur pour un client d
 ✓ Budget : [budget_jour] € sur [compte_ads], cible [icp].
 ✕ 40 € par jour sur le compte Musher.
 
-### F — Un rendu que quelqu'un peut voir · 11 points
+### F — Un rendu que le client peut valider · 11 points
 
-Il produit quelque part une surface visible — l'onglet du client dans sa Mission App, une page, un dashboard, un document — dit ce qu'on y voit, ce qu'on y valide, et un humain ouvre cette page pour le constater.
+Il publie ce qu'il produit à un endroit où le client peut le voir et le valider de son côté — une app sur Bulldozer OS, mais tout aussi bien un Notion, un Google Sheet, un document partagé. Peu importe l'endroit : ce qui compte, c'est que la validation soit prévue, et qu'un humain ait constaté le rendu.
 
-- **F1** (5 pts) — Une surface de rendu nommée : Le playbook dit OÙ son travail devient visible — onglet de la Mission App, page hébergée, dashboard, document partagé — et ce qu'on y voit : contenu, chiffres, livrables. Un playbook qui produit sans rien donner à voir est pénalisé.
-- **F2** (3 pts) — Ce qu'on y valide : Il dit ce qui est soumis à validation sur cette surface, à quel moment, et ce qui se passe en cas de refus.
+- **F1** (5 pts) — Un endroit de validation nommé : Le playbook dit OÙ il publie son travail pour que le client le valide de son côté — une app sur Bulldozer OS, un Notion, un Google Sheet, un document partagé, un canal — et ce qu'on y trouve : contenu, chiffres, livrables. Tout endroit nommé et consultable compte ; un playbook qui produit sans rien publier nulle part est pénalisé.
+- **F2** (3 pts) — Ce que le client valide, et quand : Il dit ce qui est soumis à la validation du client à cet endroit, à quel moment du process, et ce qui se passe en cas de refus.
 - **F3** (3 pts) — Le rendu est constaté : Avant de proposer quoi que ce soit au client, un humain ouvre la page et confirme ce qu'il voit. Le playbook l'exige explicitement et interdit de conclure depuis un code 200, un compte de blocs ou une relecture de la donnée écrite : ces contrôles passent au vert pendant qu'une page est vide.
 
-✓ Onglet « Lancement Google Ads » dans la Mission App : campagnes, budgets, annonces à valider.
+✓ Segmentation publiée dans le Google Sheet du client, onglet « À valider » ; GO attendu avant toute création.
 ✕ Les livrables sont dans le dossier de mission.
 
-### G — Ses outils · 4 points
+### G — Ce dont il a besoin pour tourner · 4 points
 
-Il liste ce qu'il utilise, nommément : Google Ads, Meta, HubSpot, les endpoints de Bulldozer OS. « Un outil d'emailing » ne dit rien.
+Il liste ses prérequis avant de démarrer : les connecteurs (Drive, HubSpot), les comptes et leurs accès (un compte Google Ads rattaché au projet, un MCC), les outils de Bulldozer OS, les clés. « Un outil d'emailing » ne dit rien ; « connecteur Google Drive en lecture » dit tout.
 
-- **G1** (4 pts) — Outils nommés : Les outils sont nommés précisément — régies (Google Ads, Meta, LinkedIn), CRM (HubSpot), tools MCP de Bulldozer OS, APIs — avec leur usage. « Un outil d'emailing » ne compte pas.
+- **G1** (4 pts) — Prérequis nommés : Avant de démarrer, le playbook liste ce dont il a besoin pour tourner : connecteurs (Google Drive, HubSpot, Notion), comptes et niveau d'accès (compte Google Ads rattaché au projet, MCC, propriété GA4), tools MCP de Bulldozer OS, APIs et clés. S'il a besoin d'un Drive, il dit « connecteur Drive ». Une catégorie vague — « un outil d'emailing », « un CRM » — ne compte pas.
 
-✓ bdzCreateSeaL2 pour les groupes d'annonces, HubSpot pour les opportunités.
+✓ Prérequis : compte Google Ads rattaché au projet OS, connecteur Google Drive, accès HubSpot en lecture.
 ✕ Un outil de campagnes et un CRM.
 
 ### H — Deux agents : celui qui conçoit, celui qui exécute · 8 points
@@ -181,5 +181,5 @@ Un seul suffit à plafonner le score à 40, quel que soit le reste.
 
 ---
 
-Publié par Bulldozer Collective sous licence MIT. Version de la grille : 9.
+Publié par Bulldozer Collective sous licence MIT. Version de la grille : 10.
 La version en ligne fait foi : https://playbook-marketplace.vercel.app/regles
