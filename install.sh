@@ -15,5 +15,5 @@ for f in SKILL.md rubric.json README.md; do
 done
 
 echo ""
-echo "✓ grille v10 installée — 100 points, 70 pour être publiable."
+echo "✓ règles v10 installées — 70/100 pour être publié."
 echo "  Dans Claude Code : « note ce playbook contre le standard Bulldozer »"
